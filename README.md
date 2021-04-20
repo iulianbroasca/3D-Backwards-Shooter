@@ -1,5 +1,5 @@
 # 3D-Backwards-Shooter
-
+1 day = 4 hours
 1 b.
 
     2 days for research and diagram adjustments, if necessary.
