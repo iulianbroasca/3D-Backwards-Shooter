@@ -1,5 +1,5 @@
 # 3D-Backwards-Shooter
-1 day = 4 hours
+
 1 b.
 
     2 days for research and diagram adjustments, if necessary.
@@ -8,6 +8,8 @@
 1 c.
 
     5 days for the project
+
+1 day = 4 hours
 
 # Features based on short descrition and questions:
 
