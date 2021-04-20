@@ -1,21 +1,27 @@
 # 3D-Backwards-Shooter
 
-1. b. 
-2 days for research and diagram adjustments, if necessary.
-Created a diagram of project and class structure ./Diagrams/3D Backwards shooter.drawio
+1 b.
 
-1. c.
-5 days for the project
+    2 days for research and diagram adjustments, if necessary.
+    Created a diagram of project and class structure ./Diagrams/3D Backwards shooter.drawio
 
-2. Features based on short descrition and questions:
+1 c.
+
+    5 days for the project
+
+1 day = 4 hours
+
+# Features based on short description and questions:
 
 Enemy module
+
     Object pool for enemies
     Configurable enemies - reuse from pool
     Movement behaviour
     Attach behaviour
 
 Character module
+
     Object pool for bullets
     Configurable bullets - reuse from pool
     Movement behaviour
@@ -23,11 +29,13 @@ Character module
     Assailed behaviour
 
 Obstacle module
+
     Object pool for obstacles
     Configurable obstacles - reuse from pool
     Collision behaviour
 
 Game configuration module
+
     Game configuration
         Game duration
     Enemy configuration
@@ -51,4 +59,8 @@ Game configuration module
 Input module - Command design pattern
 
 GameManager - It handles game states
+
 ScreenManager - StartScreen, GameScreen, EndScreen
+
+![Diagram](https://user-images.githubusercontent.com/37576450/115350810-3cbfe800-a1be-11eb-850e-db2fcf910eb2.png)
+
