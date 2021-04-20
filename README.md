@@ -11,7 +11,7 @@
 
 1 day = 4 hours
 
-# Features based on short descrition and questions:
+# Features based on short description and questions:
 
 Enemy module
 
