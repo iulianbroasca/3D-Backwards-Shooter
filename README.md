@@ -57,4 +57,5 @@ Game configuration module
 Input module - Command design pattern
 
 GameManager - It handles game states
+
 ScreenManager - StartScreen, GameScreen, EndScreen
