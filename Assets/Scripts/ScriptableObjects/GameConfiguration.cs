@@ -6,10 +6,10 @@ namespace ScriptableObjects
     public class GameConfiguration : ScriptableObject
     {
         [SerializeField] private float gameDuration;
-        [SerializeField] private float waitingTimeUntilGameStart;
+        [SerializeField] private int waitingTimeUntilGameStart;
 
         public float GameDuration => gameDuration;
 
-        public float WaitingTimeUntilGameStart => waitingTimeUntilGameStart;
+        public int WaitingTimeUntilGameStart => waitingTimeUntilGameStart;
     }
 }

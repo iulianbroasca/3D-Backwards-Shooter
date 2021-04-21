@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40deff3626469cd499db3e7194f0e966, type: 3}
-  m_Name: Game configuration
+  m_Name: GameConfiguration
   m_EditorClassIdentifier: 
-  gameDuration: 0
+  gameDuration: 3.1
+  waitingTimeUntilGameStart: 5

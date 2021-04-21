@@ -47,9 +47,9 @@ namespace UI.Managers
 
         private void Initialization()
         {
-            rootCanvas = GameObject.FindWithTag(Constants.MainCanvasTag);
+            rootCanvas = GameObject.FindWithTag(Tags.MainCanvasTag);
             LoadScreens();
-            currentBaseScreen = GameObject.FindWithTag(Constants.StartScreenTag).GetComponent<BaseScreen>();
+            currentBaseScreen = GameObject.FindWithTag(Tags.StartScreenTag).GetComponent<BaseScreen>();
             currentBaseScreen.EnableScreen();
         }
     }

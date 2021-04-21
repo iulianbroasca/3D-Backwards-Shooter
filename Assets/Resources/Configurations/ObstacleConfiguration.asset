@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13a18790b182a3f4ea1de40d1974e70f, type: 3}
-  m_Name: Obstacle configuration
+  m_Name: ObstacleConfiguration
   m_EditorClassIdentifier: 
   speedInterval:
     minimum: 0
@@ -18,6 +18,6 @@ MonoBehaviour:
   waitingTimeInstantiatingObstacle:
     minimum: 0
     maximum: 0
-  obstacleSide:
+  obstacleSize:
     minimum: {x: 0, y: 0, z: 0}
     maximum: {x: 0, y: 0, z: 0}
