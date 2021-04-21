@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using Models;
 using UnityEngine;
 
-public class ObstacleConfiguration : MonoBehaviour
+namespace ScriptableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "ObstacleConfiguration", menuName = "Create configuration/Obstacle configuration")]
+    public class ObstacleConfiguration : ScriptableObject
     {
-        
-    }
+        [SerializeField] private Interval<float> speedInterval;
+        [SerializeField] private Interval<float> waitingTimeInstantiatingObstacle;
+        [SerializeField] private Interval<Vector3> obstacleSize;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Interval<float> SpeedInterval => speedInterval;
+
+        public Interval<float> WaitingTimeInstantiatingObstacle => waitingTimeInstantiatingObstacle;
+
+        public Interval<Vector3> ObstacleSize => obstacleSize;
     }
 }

@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletConfiguration : MonoBehaviour
+namespace ScriptableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "BulletConfiguration", menuName = "Create configuration/Bullet configuration")]
+    public class BulletConfiguration : ScriptableObject
     {
-        
-    }
+        [SerializeField] private BulletComponent bulletGameObject;
+        [SerializeField] private float bulletLifeDuration;
+        [SerializeField] private float bulletSpeed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public BulletComponent BulletGameObject => bulletGameObject;
+
+        public float BulletLifeDuration => bulletLifeDuration;
+
+        public float BulletSpeed => bulletSpeed;
     }
 }

@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameConfiguration : MonoBehaviour
+namespace ScriptableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "GameConfiguration", menuName = "Create configuration/Game configuration")]
+    public class GameConfiguration : ScriptableObject
     {
-        
-    }
+        [SerializeField] private float gameDuration;
+        [SerializeField] private float waitingTimeUntilGameStart;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float GameDuration => gameDuration;
+
+        public float WaitingTimeUntilGameStart => waitingTimeUntilGameStart;
     }
 }

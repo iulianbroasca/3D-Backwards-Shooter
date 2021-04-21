@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+using Models;
 using UnityEngine;
 
-public class EnemyConfiguration : MonoBehaviour
+namespace ScriptableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "EnemyConfiguration", menuName = "Create configuration/Enemy configuration")]
+    public class EnemyConfiguration : ScriptableObject
     {
-        
-    }
+        [SerializeField] private EnemyComponent enemyGameObject;
+        [SerializeField] private int numberEnemiesInGame;
+        [SerializeField] private Interval<float> speedInterval;
+        [SerializeField] private Interval<int> numberEnemiesPerLine;
+        [SerializeField] private Interval<float> waitingTimeInstantiatingEnemies;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public EnemyComponent EnemyGameObject => enemyGameObject;
+
+        public int NumberEnemiesInGame => numberEnemiesInGame;
+
+        public Interval<float> SpeedInterval => speedInterval;
+
+        public Interval<int> NumberEnemiesPerLine => numberEnemiesPerLine;
+
+        public Interval<float> WaitingTimeInstantiatingEnemies => waitingTimeInstantiatingEnemies;
     }
 }

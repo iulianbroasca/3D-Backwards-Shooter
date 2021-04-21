@@ -4,5 +4,7 @@ namespace Globals
     {
         public const string MainCanvasTag = "MainCanvas";
         public const string StartScreenTag = "StartScreen";
+
+        public const string ConfigurationsPath = "Configurations/";
     }
 }

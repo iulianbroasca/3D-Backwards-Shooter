@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterConfiguration : MonoBehaviour
+namespace ScriptableObjects
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "CharacterConfiguration", menuName = "Create configuration/Character configuration")]
+    public class CharacterConfiguration : ScriptableObject
     {
-        
-    }
+        [SerializeField] private float speedBackward;
+        [SerializeField] private float waitingTimeNextShot;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float SpeedBackward => speedBackward;
+
+        public float WaitingTimeNextShot => waitingTimeNextShot;
     }
 }
