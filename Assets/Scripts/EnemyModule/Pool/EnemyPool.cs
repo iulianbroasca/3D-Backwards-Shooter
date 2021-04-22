@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using EnemyModule.Components;
+using ObjectPool.BaseScripts;
 
-public class EnemyPool : MonoBehaviour
+namespace EnemyModule.Pool
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyPool : BaseObjectPool<EnemyComponent>
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void SetEnemyModuleConfigurations(float deathDuration)
+        {
+            var enemy = GetObjectFromPool(false);
+            enemy.SetEnemyConfigurations(deathDuration, this);
+            base.AddObjectToPool(enemy);
+        }
     }
 }

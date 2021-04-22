@@ -1,3 +1,4 @@
+using BulletModule.Components;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -5,14 +6,17 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "BulletConfiguration", menuName = "Create configuration/Bullet configuration")]
     public class BulletConfiguration : ScriptableObject
     {
-        [SerializeField] private BulletComponent bulletGameObject;
+        [SerializeField] private BulletComponent bulletComponent;
         [SerializeField] private float bulletLifeDuration;
         [SerializeField] private float bulletSpeed;
+        [SerializeField] private float waitingTimeNextBullet;
 
-        public BulletComponent BulletGameObject => bulletGameObject;
+        public BulletComponent GetBulletComponent => bulletComponent;
 
-        public float BulletLifeDuration => bulletLifeDuration;
+        public float GetBulletLifeDuration => bulletLifeDuration;
 
-        public float BulletSpeed => bulletSpeed;
+        public float GetBulletSpeed => bulletSpeed;
+
+        public float GetWaitingTimeNextBullet => waitingTimeNextBullet;
     }
 }

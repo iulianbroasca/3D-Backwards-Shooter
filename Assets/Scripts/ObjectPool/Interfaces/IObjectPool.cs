@@ -1,9 +1,9 @@
 namespace ObjectPool.Interfaces
 {
-    interface IObjectPool<T>
+    public interface IObjectPool<T>
     {
         void RegisterComponent(T component);
-        T GetObjectFromPool();
+        T GetObjectFromPool(bool setActive);
         void AddObjectToPool(T component);
     }
 }

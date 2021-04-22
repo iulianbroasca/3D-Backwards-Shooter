@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Globals;
 using MonoSingleton;
-using ScriptableObjects;
 using UnityEngine;
 
 namespace GameConfigurationModule.Managers
@@ -23,13 +22,6 @@ namespace GameConfigurationModule.Managers
             configurations.Add(typeof(T), element);
 
             return (T) element;
-        }
-
-        [ContextMenu("Test")]
-        public void Test()
-        {
-            var x = GetConfiguration<GameConfiguration>();
-            Debug.Log(x.GameDuration);
         }
     }
 }

@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using Globals;
 using UnityEngine;
 
-public class CharacterAssailedBehaviour : MonoBehaviour
+namespace CharacterModule.Behaviours
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CharacterAssailedBehaviour : MonoBehaviour
     {
-        
-    }
+        private void Awake()
+        {
+            States.GameOver.AddActionState(Assailed);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Assailed()
+        {
+            Debug.Log("Triggers the animation dies");
+        }
     }
 }

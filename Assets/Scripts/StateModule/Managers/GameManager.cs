@@ -1,38 +1,24 @@
-using Globals;
 using MonoSingleton;
 using StateModule.Models;
 using UI.Managers;
+using static Globals.States;
 
 namespace StateModule.Managers
 {
     public class GameManager : MonoSingleton<GameManager>
     {
-        private States.GameState gameState;
+        private GameState gameState = GameState.IntroGame;
 
-        public void RestartGame()
+        public bool IsInGameMode()
         {
-            SetGameState(States.StartGame);
+            return gameState == GameState.StartGame;
         }
 
-        public void StartGame()
-        {
-            SetGameState(States.Game);
-        }
-
-        public void EndGameWon()
-        {
-            SetGameState(States.EndGameWon);
-        }
-
-        public void EndGameLost()
-        {
-            SetGameState(States.EndGameLost);
-        }
-
-        private void SetGameState(State state)
+        public void SetGameState(State state)
         {
             var (localGameState, screen) = state.GetState();
             gameState = localGameState;
+            state.InvokeStateActions();
             ScreenManager.Instance.SwitchScreen(screen);
         }
     }

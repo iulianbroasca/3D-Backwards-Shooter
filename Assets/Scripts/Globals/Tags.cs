@@ -2,7 +2,9 @@ namespace Globals
 {
     public static class Tags
     {
-        public const string MainCanvasTag = "MainCanvas";
-        public const string StartScreenTag = "StartScreen";
+        public const string MainCanvas = "MainCanvas";
+        public const string StartScreen = "StartScreen";
+        public const string ObstacleSpawner = "ObstacleSpawner";
+        public const string EnemySpawner = "EnemySpawner";
     }
 }

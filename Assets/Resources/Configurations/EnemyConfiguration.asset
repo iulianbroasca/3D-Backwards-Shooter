@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a267baafa41b96d4faa49ab568983817, type: 3}
   m_Name: EnemyConfiguration
   m_EditorClassIdentifier: 
-  enemyGameObject: {fileID: 0}
-  numberEnemiesInGame: 0
-  speedInterval:
-    minimum: 0
-    maximum: 0
+  enemyComponent: {fileID: 8618815985038848470, guid: 5fd4c04fdfc870c44b46408241f290e1, type: 3}
+  numberEnemiesInGame: 25
+  deathDuration: 1.5
+  speed: 2
+  boost: 0.5
   numberEnemiesPerLine:
-    minimum: 0
-    maximum: 0
+    minimum: 2
+    maximum: 5
   waitingTimeInstantiatingEnemies:
-    minimum: 0
-    maximum: 0
+    minimum: 2
+    maximum: 4

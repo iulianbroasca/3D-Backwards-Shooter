@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using CharacterModule.Components;
+using EnemyModule.Behaviours;
+using EnemyModule.Components;
 using UnityEngine;
 
-public class ObstacleCollisionBehaviour : MonoBehaviour
+namespace ObstacleModule.Behaviours
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ObstacleCollisionBehaviour : MonoBehaviour
     {
-        
-    }
+        private void OnCollisionEnter(Collision other)
+        {
+            var enemy = other.gameObject.GetComponent<EnemyComponent>();
+            if (enemy != null)
+                enemy.TouchedByObstacle();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if (other.gameObject.GetComponent<CharacterComponent>() != null)
+                EnemyAttackBehaviour.IncreaseSpeed();
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (other.gameObject.GetComponent<CharacterComponent>() != null)
+                EnemyAttackBehaviour.DecreaseSpeed();
+        }
     }
 }

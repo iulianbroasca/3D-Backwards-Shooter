@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using BulletModule.Components;
+using ObjectPool.BaseScripts;
 
-public class BulletPool : MonoBehaviour
+namespace BulletModule.Pool
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BulletPool : BaseObjectPool<BulletComponent>
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void SetBulletConfigurations(float speed, float bulletLifeDuration)
+        {
+            var bullet = GetObjectFromPool(false);
+            bullet.SetBulletConfigurations(speed, bulletLifeDuration, this);
+            base.AddObjectToPool(bullet);
+        }
     }
 }

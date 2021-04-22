@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a18790b182a3f4ea1de40d1974e70f, type: 3}
   m_Name: ObstacleConfiguration
   m_EditorClassIdentifier: 
-  speedInterval:
-    minimum: 0
-    maximum: 0
+  obstacleComponent: {fileID: 7966115682989555888, guid: 6282cb0599f01294c8f0f35a652b539d, type: 3}
+  speed: 2
+  obstacleLifeDuration: 10
   waitingTimeInstantiatingObstacle:
-    minimum: 0
-    maximum: 0
+    minimum: 2
+    maximum: 2.5
   obstacleSize:
-    minimum: {x: 0, y: 0, z: 0}
-    maximum: {x: 0, y: 0, z: 0}
+    minimum: {x: 0.1, y: 0.5, z: 0.1}
+    maximum: {x: 0.8, y: 3.5, z: 3}

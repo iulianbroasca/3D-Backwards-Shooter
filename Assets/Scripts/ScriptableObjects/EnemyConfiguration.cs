@@ -1,3 +1,4 @@
+using EnemyModule.Components;
 using Models;
 using UnityEngine;
 
@@ -6,20 +7,30 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "EnemyConfiguration", menuName = "Create configuration/Enemy configuration")]
     public class EnemyConfiguration : ScriptableObject
     {
-        [SerializeField] private EnemyComponent enemyGameObject;
+        [SerializeField] private EnemyComponent enemyComponent;
         [SerializeField] private int numberEnemiesInGame;
-        [SerializeField] private Interval<float> speedInterval;
+        [SerializeField] private float deathDuration;
+        [SerializeField] private float speed;
+        [SerializeField] private float boost;
         [SerializeField] private Interval<int> numberEnemiesPerLine;
         [SerializeField] private Interval<float> waitingTimeInstantiatingEnemies;
 
-        public EnemyComponent EnemyGameObject => enemyGameObject;
+        public EnemyComponent GetEnemyComponent => enemyComponent;
 
-        public int NumberEnemiesInGame => numberEnemiesInGame;
+        public int GetNumberEnemiesInGame => numberEnemiesInGame;
 
-        public Interval<float> SpeedInterval => speedInterval;
+        public float GetDeathDuration => deathDuration;
 
-        public Interval<int> NumberEnemiesPerLine => numberEnemiesPerLine;
+        public float GetSpeed => speed;
 
-        public Interval<float> WaitingTimeInstantiatingEnemies => waitingTimeInstantiatingEnemies;
+        public float GetBoost => boost;
+
+        public int GetRandomNumberEnemiesPerLine => 
+            Random.Range(numberEnemiesPerLine.GetInterval().minimum, 
+                numberEnemiesPerLine.GetInterval().maximum);
+
+        public float GetRandomWaitingTimeInstantiatingEnemies => 
+            Random.Range(waitingTimeInstantiatingEnemies.GetInterval().minimum,
+                waitingTimeInstantiatingEnemies.GetInterval().maximum);
     }
 }

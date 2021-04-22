@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using ObjectPool.BaseScripts;
+using ObstacleModule.Components;
 
-public class ObstaclePool : MonoBehaviour
+namespace ObstacleModule.Pool
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ObstaclePool : BaseObjectPool<ObstacleComponent>
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void SetObstacleModuleConfigurations(float obstacleLifeDuration)
+        {
+            var obstacle = GetObjectFromPool(false);
+            obstacle.SetObstacleConfigurations(this, obstacleLifeDuration);
+            base.AddObjectToPool(obstacle);
+        }
     }
 }

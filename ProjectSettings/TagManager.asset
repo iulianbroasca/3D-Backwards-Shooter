@@ -7,6 +7,9 @@ TagManager:
   - Managers
   - MainCanvas
   - StartScreen
+  - Gun
+  - ObstacleSpawner
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
@@ -15,11 +18,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Placement
+  - Enemy
+  - Character
+  - Bullet
+  - Obstacle
   - 
   - 
   - 

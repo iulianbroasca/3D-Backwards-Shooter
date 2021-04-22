@@ -14,17 +14,17 @@ namespace ObjectPool.BaseScripts
             this.component = component;
         }
 
-        public virtual T GetObjectFromPool()
+        public virtual T GetObjectFromPool(bool setActive = true)
         {
             LazyInstantiation();
             var element = pool.Dequeue();
-            element.gameObject.SetActive(true);
+            element.gameObject.SetActive(setActive);
             return element;
         }
 
         public virtual void AddObjectToPool(T component)
         {
-            InstantiateAndEnqueueComponent(component);
+            EnqueueComponent(component);
         }
 
         private void LazyInstantiation()
@@ -32,10 +32,10 @@ namespace ObjectPool.BaseScripts
             if (pool.Count > 0)
                 return;
 
-            InstantiateAndEnqueueComponent(Instantiate(component));
+            EnqueueComponent(Instantiate(component));
         }
 
-        private void InstantiateAndEnqueueComponent(T component)
+        private void EnqueueComponent(T component)
         {
             component.gameObject.SetActive(false);
             pool.Enqueue(component);

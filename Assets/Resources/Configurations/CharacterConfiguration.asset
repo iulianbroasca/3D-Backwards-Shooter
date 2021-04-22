@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2825bf85b90d7e45a2f658a61108a9d, type: 3}
   m_Name: CharacterConfiguration
   m_EditorClassIdentifier: 
-  speedBackward: 0
+  lateralSpeed: 5
   waitingTimeNextShot: 0

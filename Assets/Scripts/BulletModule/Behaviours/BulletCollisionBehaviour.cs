@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using EnemyModule.Components;
 using UnityEngine;
 
-public class BulletCollisionBehaviour : MonoBehaviour
+namespace BulletModule.Behaviours
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BulletCollisionBehaviour : MonoBehaviour
     {
-        
-    }
+        private void OnCollisionEnter(Collision other)
+        {
+            var enemy = other.gameObject.GetComponent<EnemyComponent>();
+            if (enemy == null) 
+                return;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            enemy.TouchedByBullet();
+            gameObject.SetActive(false);
+        }
     }
 }

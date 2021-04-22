@@ -42,14 +42,15 @@ namespace UI.Managers
             foreach (var screen in rootCanvas.GetComponentsInChildren<BaseScreen>(true))
             {
                 screens.Add(screen.GetType(), screen);
+                screen.InitializeScreen();
             }
         }
 
         private void Initialization()
         {
-            rootCanvas = GameObject.FindWithTag(Tags.MainCanvasTag);
+            rootCanvas = GameObject.FindWithTag(Tags.MainCanvas);
             LoadScreens();
-            currentBaseScreen = GameObject.FindWithTag(Tags.StartScreenTag).GetComponent<BaseScreen>();
+            currentBaseScreen = GameObject.FindWithTag(Tags.StartScreen).GetComponent<BaseScreen>();
             currentBaseScreen.EnableScreen();
         }
     }

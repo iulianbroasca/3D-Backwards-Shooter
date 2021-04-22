@@ -1,4 +1,5 @@
 using Models;
+using ObstacleModule.Components;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -6,14 +7,30 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "ObstacleConfiguration", menuName = "Create configuration/Obstacle configuration")]
     public class ObstacleConfiguration : ScriptableObject
     {
-        [SerializeField] private Interval<float> speedInterval;
+        [SerializeField] private ObstacleComponent obstacleComponent;
+        [SerializeField] private float speed;
+        [SerializeField] private float obstacleLifeDuration;
         [SerializeField] private Interval<float> waitingTimeInstantiatingObstacle;
         [SerializeField] private Interval<Vector3> obstacleSize;
 
-        public Interval<float> SpeedInterval => speedInterval;
+        public ObstacleComponent GetObstacleComponent => obstacleComponent;
 
-        public Interval<float> WaitingTimeInstantiatingObstacle => waitingTimeInstantiatingObstacle;
+        public float GetSpeed => speed;
 
-        public Interval<Vector3> ObstacleSize => obstacleSize;
+        public float GetObstacleLifeDuration => obstacleLifeDuration;
+
+        public float GetRandomWaitingTimeInstantiatingObstacle =>
+                Random.Range(waitingTimeInstantiatingObstacle.GetInterval().minimum,
+                    waitingTimeInstantiatingObstacle.GetInterval().maximum);
+
+        public Vector3 GetObstacleSize()
+        {
+            var minSize = obstacleSize.GetInterval().minimum;
+            var maxSize = obstacleSize.GetInterval().maximum;
+
+            return new Vector3(Random.Range(minSize.x, maxSize.x), 
+                Random.Range(minSize.y, maxSize.y),
+                Random.Range(minSize.z, maxSize.z));
+        }
     }
 }

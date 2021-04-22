@@ -5,6 +5,11 @@ namespace UI.BaseScripts
 {
     public class BaseScreen : MonoBehaviour, IScreen
     {
+        public virtual void InitializeScreen()
+        {
+            
+        }
+
         public virtual void EnableScreen()
         {
             gameObject.SetActive(true);

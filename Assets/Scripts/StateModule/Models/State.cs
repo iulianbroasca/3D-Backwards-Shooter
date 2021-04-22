@@ -7,6 +7,7 @@ namespace StateModule.Models
     {
         private readonly States.GameState gameState;
         private readonly Type screen;
+        private Action stateActions;
 
         public State(States.GameState state, Type screen)
         {
@@ -17,6 +18,16 @@ namespace StateModule.Models
         public (States.GameState gameState, Type screen) GetState()
         {
             return(gameState, screen);
+        }
+
+        public void AddActionState(Action action)
+        {
+            stateActions += action;
+        }
+
+        public void InvokeStateActions()
+        {
+            stateActions?.Invoke();
         }
     }
 }

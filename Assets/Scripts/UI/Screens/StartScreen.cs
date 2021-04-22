@@ -1,5 +1,6 @@
 using System.Collections;
 using GameConfigurationModule.Managers;
+using Globals;
 using ScriptableObjects;
 using StateModule.Managers;
 using UI.BaseScripts;
@@ -11,9 +12,9 @@ namespace UI.Screens
     public class StartScreen : BaseScreen
     {
         private Text counter;
-        private Button startGameButton;        
-        
-        private void Awake()
+        private Button startGameButton;
+
+        public override void InitializeScreen()
         {
             counter = transform.GetComponentInChildren<Text>();
             startGameButton = transform.GetComponentInChildren<Button>();
@@ -25,11 +26,13 @@ namespace UI.Screens
         {
             base.DisableScreen();
             counter.text = string.Empty;
+            startGameButton.gameObject.SetActive(true);
         }
 
         private void StartGameButton()
         {
             StartCoroutine(StartGameCoroutine());
+            startGameButton.gameObject.SetActive(false);
         }
 
         private IEnumerator StartGameCoroutine()
@@ -42,7 +45,7 @@ namespace UI.Screens
                 duration--;
             }
 
-            GameManager.Instance.StartGame();
+            GameManager.Instance.SetGameState(States.StartGame);
         }
     }
 }
