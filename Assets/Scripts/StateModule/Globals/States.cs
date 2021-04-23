@@ -1,7 +1,7 @@
 using StateModule.Models;
 using UI.Screens;
 
-namespace Globals
+namespace StateModule.Globals
 {
     public static class States
     {

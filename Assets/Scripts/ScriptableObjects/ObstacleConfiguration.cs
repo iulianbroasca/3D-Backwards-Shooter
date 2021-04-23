@@ -7,10 +7,10 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "ObstacleConfiguration", menuName = "Create configuration/Obstacle configuration")]
     public class ObstacleConfiguration : ScriptableObject
     {
-        [SerializeField] private ObstacleComponent obstacleComponent;
+        [SerializeField, Tooltip("Prefab")] private ObstacleComponent obstacleComponent;
         [SerializeField] private float speed;
-        [SerializeField] private float obstacleLifeDuration;
-        [SerializeField] private Interval<float> waitingTimeInstantiatingObstacle;
+        [SerializeField, Tooltip("Seconds")] private float obstacleLifeDuration;
+        [SerializeField, Tooltip("Seconds")] private Interval<float> waitingTimeInstantiatingObstacle;
         [SerializeField] private Interval<Vector3> obstacleSize;
 
         public ObstacleComponent GetObstacleComponent => obstacleComponent;

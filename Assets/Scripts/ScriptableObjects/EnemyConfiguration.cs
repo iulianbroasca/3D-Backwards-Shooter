@@ -7,13 +7,13 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "EnemyConfiguration", menuName = "Create configuration/Enemy configuration")]
     public class EnemyConfiguration : ScriptableObject
     {
-        [SerializeField] private EnemyComponent enemyComponent;
+        [SerializeField, Tooltip("Prefab")] private EnemyComponent enemyComponent;
         [SerializeField] private int numberEnemiesInGame;
-        [SerializeField] private float deathDuration;
+        [SerializeField, Tooltip("Seconds")] private float deathDuration;
         [SerializeField] private float speed;
-        [SerializeField] private float boost;
+        [SerializeField, Tooltip("It will be applied when the character touches the wall")] private float boost;
         [SerializeField] private Interval<int> numberEnemiesPerLine;
-        [SerializeField] private Interval<float> waitingTimeInstantiatingEnemies;
+        [SerializeField, Tooltip("Seconds")] private Interval<float> waitingTimeInstantiatingEnemies;
 
         public EnemyComponent GetEnemyComponent => enemyComponent;
 

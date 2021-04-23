@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
   roadWidth: 8
-  gameDuration: 3.1
-  waitingTimeUntilGameStart: 5
+  gameDuration: 55
+  waitingTimeUntilGameStart: 3

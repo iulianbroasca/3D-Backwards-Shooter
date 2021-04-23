@@ -4,6 +4,7 @@ using GameConfigurationModule.Managers;
 using Globals;
 using MonoSingleton;
 using ScriptableObjects;
+using StateModule.Globals;
 using StateModule.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;

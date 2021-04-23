@@ -1,7 +1,7 @@
 using MonoSingleton;
 using StateModule.Models;
 using UI.Managers;
-using static Globals.States;
+using static StateModule.Globals.States;
 
 namespace StateModule.Managers
 {

@@ -4,6 +4,7 @@ using Globals;
 using MonoSingleton;
 using ObstacleModule.Pool;
 using ScriptableObjects;
+using StateModule.Globals;
 using StateModule.Managers;
 using UnityEngine;
 

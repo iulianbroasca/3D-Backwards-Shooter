@@ -3,6 +3,7 @@ using EnemyModule.Behaviours;
 using EnemyModule.Managers;
 using EnemyModule.Pool;
 using Globals;
+using StateModule.Globals;
 using UnityEngine;
 
 namespace EnemyModule.Components

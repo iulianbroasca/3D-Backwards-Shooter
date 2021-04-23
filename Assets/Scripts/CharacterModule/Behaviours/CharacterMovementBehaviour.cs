@@ -1,7 +1,10 @@
 using EnemyModule.Behaviours;
 using GameConfigurationModule.Managers;
 using Globals;
+using InputModule.Interfaces;
+using InputModule.Models;
 using ScriptableObjects;
+using StateModule.Globals;
 using UnityEngine;
 
 namespace CharacterModule.Behaviours
@@ -14,8 +17,13 @@ namespace CharacterModule.Behaviours
         private Camera cameraComponent;
         private float lateralSpeed;
 
+        private IInput input;
+
         private void Awake()
         {
+            InitializeStates();
+            InitializeConfigurations();
+            InitializeInput();
             Initialize();
         }
 
@@ -30,7 +38,7 @@ namespace CharacterModule.Behaviours
 
         private void FixedUpdate()
         {
-            if (!Physics.Raycast(cameraComponent.ScreenPointToRay(Input.mousePosition), out raycastHit, Mathf.Infinity,
+            if (!Physics.Raycast(cameraComponent.ScreenPointToRay(input.GetInput()), out raycastHit, Mathf.Infinity,
                     placementLayer) || !Input.GetMouseButton(0))
                 return;
 
@@ -52,9 +60,26 @@ namespace CharacterModule.Behaviours
         {
             placementLayer = LayerMask.GetMask(Layers.PlacementLayer);
             cameraComponent = Camera.main;
-            lateralSpeed = ConfigurationManager.Instance.GetConfiguration<CharacterConfiguration>().GetLateralSpeed;
             SetPlayerPosition(transform.localPosition);
+        }
+
+        private void InitializeInput()
+        {
+#if UNITY_STANDALONE
+            input = new MouseInput();
+#elif UNITY_ANDROID || UNITY_IOS
+            input = new MobileInput();
+#endif
+        }
+
+        private void InitializeStates()
+        {
             States.IntroGame.AddActionState(ResetPosition);
+        }
+
+        private void InitializeConfigurations()
+        {
+            lateralSpeed = ConfigurationManager.Instance.GetConfiguration<CharacterConfiguration>().GetLateralSpeed;
         }
     }
 }

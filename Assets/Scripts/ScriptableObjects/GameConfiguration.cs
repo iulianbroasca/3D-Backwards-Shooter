@@ -6,8 +6,8 @@ namespace ScriptableObjects
     public class GameConfiguration : ScriptableObject
     {
         [SerializeField, Range(6,10)] private float roadWidth;
-        [SerializeField] private float gameDuration;
-        [SerializeField] private int waitingTimeUntilGameStart;
+        [SerializeField, Tooltip("Seconds")] private float gameDuration;
+        [SerializeField, Tooltip("Seconds")] private int waitingTimeUntilGameStart;
 
         public float RoadWidth => roadWidth;
 

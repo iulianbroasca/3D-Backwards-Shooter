@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ObstacleConfiguration
   m_EditorClassIdentifier: 
   obstacleComponent: {fileID: 7966115682989555888, guid: 6282cb0599f01294c8f0f35a652b539d, type: 3}
-  speed: 2
+  speed: 3
   obstacleLifeDuration: 10
   waitingTimeInstantiatingObstacle:
     minimum: 2

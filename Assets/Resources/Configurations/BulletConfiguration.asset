@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BulletConfiguration
   m_EditorClassIdentifier: 
   bulletComponent: {fileID: 1749818471408065261, guid: af426e30557d3364eb35ca5caedfe3ae, type: 3}
-  bulletLifeDuration: 3
-  bulletSpeed: 10
+  bulletLifeDuration: 2
+  bulletSpeed: 15
   waitingTimeNextBullet: 0.5
