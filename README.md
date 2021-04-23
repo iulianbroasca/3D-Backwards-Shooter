@@ -1,4 +1,5 @@
 # 3D-Backwards-Shooter
+    To move the character press on the road.
 
 1 b.
 
