@@ -1,8 +1,6 @@
 using System;
 using EnemyModule.Behaviours;
-using EnemyModule.Managers;
 using EnemyModule.Pool;
-using Globals;
 using StateModule.Globals;
 using UnityEngine;
 
@@ -14,6 +12,8 @@ namespace EnemyModule.Components
     public class EnemyComponent : MonoBehaviour
     {
         private static EnemyPool enemyPool;
+        private static Action shotDownByBullet;
+        private static Action shotDownByObstacle;
 
         private EnemyAttackBehaviour enemyAttackBehaviour;
         private EnemyDeathBehaviour enemyDeathBehaviour;
@@ -63,20 +63,22 @@ namespace EnemyModule.Components
             hit = false;
         }
 
-        public void SetEnemyConfigurations(float deathDuration, EnemyPool pool)
+        public void SetEnemyConfigurations(float deathDuration, EnemyPool pool, Action shotDownBullet, Action shotDownObstacle)
         {
             EnemyDeathBehaviour.SetConfigurations(deathDuration);
             enemyPool = pool;
+            shotDownByBullet = shotDownBullet;
+            shotDownByObstacle = shotDownObstacle;
         }
 
         public void TouchedByBullet()
         {
-            Touched(EnemyManager.Instance.EnemyShotDownByBullet);
+            Touched(shotDownByBullet);
         }
 
         public void TouchedByObstacle()
         {
-            Touched(EnemyManager.Instance.EnemyShotDownByObstacle);
+            Touched(shotDownByObstacle);
         }
 
         private void Touched(Action shotDown)

@@ -1,5 +1,4 @@
 using System;
-using Globals;
 using StateModule.Globals;
 
 namespace StateModule.Models

@@ -1,22 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using Globals;
-using MonoSingleton;
 using UI.BaseScripts;
 using UnityEngine;
 
 namespace UI.Managers
 {
-    public class ScreenManager : MonoSingleton<ScreenManager>
+    public class ScreenManager : MonoBehaviour
     {
         private readonly Dictionary<object, BaseScreen> screens = new Dictionary<object, BaseScreen>();
 
         private GameObject rootCanvas;
         private BaseScreen currentBaseScreen;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             Initialization();
         }
 

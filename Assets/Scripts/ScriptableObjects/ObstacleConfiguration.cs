@@ -7,11 +7,16 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "ObstacleConfiguration", menuName = "Create configuration/Obstacle configuration")]
     public class ObstacleConfiguration : ScriptableObject
     {
-        [SerializeField, Tooltip("Prefab")] private ObstacleComponent obstacleComponent;
-        [SerializeField] private float speed;
-        [SerializeField, Tooltip("Seconds")] private float obstacleLifeDuration;
-        [SerializeField, Tooltip("Seconds")] private Interval<float> waitingTimeInstantiatingObstacle;
-        [SerializeField] private Interval<Vector3> obstacleSize;
+        [SerializeField, Tooltip("Assign the prefab that contains the ObstacleComponent.")] 
+        private ObstacleComponent obstacleComponent;
+        [SerializeField, Min(0.1f), Tooltip("The speed of the obstacle.")] 
+        private float speed;
+        [SerializeField, Min(0.1f), Tooltip("The life of the bullet after it was instantiated. (seconds)")] 
+        private float obstacleLifeDuration;
+        [SerializeField, Tooltip("The waiting time until the next obstacles will appear in scene. (seconds)")] 
+        private Interval<float> waitingTimeInstantiatingObstacle;
+        [SerializeField, Tooltip("The size of the obstacle.")] 
+        private Interval<Vector3> obstacleSize;
 
         public ObstacleComponent GetObstacleComponent => obstacleComponent;
 

@@ -1,7 +1,6 @@
 using System.Collections;
 using GameConfigurationModule.Managers;
 using Globals;
-using MonoSingleton;
 using ObstacleModule.Pool;
 using ScriptableObjects;
 using StateModule.Globals;
@@ -10,7 +9,7 @@ using UnityEngine;
 
 namespace ObstacleModule.Managers
 {
-    public class ObstacleManager : MonoSingleton<ObstacleManager>
+    public class ObstacleManager : MonoBehaviour
     {
         private ObstacleConfiguration obstacleConfiguration;
         private Coroutine instantiationCoroutine;
@@ -18,9 +17,8 @@ namespace ObstacleModule.Managers
         private ObstaclePool obstaclePool;
         private float roadWidth;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             obstacleSpawner = GameObject.FindGameObjectWithTag(Tags.ObstacleSpawner).transform;
 
             InitializeConfigurations();

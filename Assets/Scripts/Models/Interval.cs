@@ -6,8 +6,8 @@ namespace Models
     [Serializable]
     public class Interval<T>
     {
-        [SerializeField] private T minimum;
-        [SerializeField] private T maximum;
+        [SerializeField, Min(0)] private T minimum;
+        [SerializeField, Min(0)] private T maximum;
 
         public (T minimum, T maximum) GetInterval()
         {

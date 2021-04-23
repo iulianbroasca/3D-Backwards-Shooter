@@ -2,7 +2,6 @@ using System.Collections;
 using EnemyModule.Pool;
 using GameConfigurationModule.Managers;
 using Globals;
-using MonoSingleton;
 using ScriptableObjects;
 using StateModule.Globals;
 using StateModule.Managers;
@@ -11,7 +10,7 @@ using Random = UnityEngine.Random;
 
 namespace EnemyModule.Managers
 {
-    public class EnemyManager : MonoSingleton<EnemyManager>
+    public class EnemyManager : MonoBehaviour
     {
         private Coroutine instantiationCoroutine;
         private Transform enemySpawner;
@@ -24,10 +23,8 @@ namespace EnemyModule.Managers
         private int currentEnemiesShotDown;
         private int remainingEnemiesInstantiation;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
-
             enemySpawner = GameObject.FindGameObjectWithTag(Tags.EnemySpawner).transform;
 
             InitializeConfigurations();
@@ -35,13 +32,13 @@ namespace EnemyModule.Managers
             InitializeStates();
         }
 
-        public void EnemyShotDownByBullet()
+        private void EnemyShotDownByBullet()
         {
             currentEnemiesShotDown++;
             CheckNumberEnemiesShotDown();
         }
 
-        public void EnemyShotDownByObstacle()
+        private void EnemyShotDownByObstacle()
         {
             remainingEnemiesInstantiation++;
         }
@@ -124,7 +121,7 @@ namespace EnemyModule.Managers
         {
             enemyPool = gameObject.AddComponent<EnemyPool>();
             enemyPool.RegisterComponent(enemyConfiguration.GetEnemyComponent);
-            enemyPool.SetEnemyModuleConfigurations(enemyConfiguration.GetDeathDuration);
+            enemyPool.SetEnemyModuleConfigurations(enemyConfiguration.GetDeathDuration, EnemyShotDownByBullet, EnemyShotDownByObstacle);
         }
 
         private void InitializeStates()

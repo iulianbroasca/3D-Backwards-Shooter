@@ -1,7 +1,6 @@
 using System.Collections;
 using BulletModule.Pool;
 using GameConfigurationModule.Managers;
-using Globals;
 using ScriptableObjects;
 using StateModule.Globals;
 using StateModule.Managers;

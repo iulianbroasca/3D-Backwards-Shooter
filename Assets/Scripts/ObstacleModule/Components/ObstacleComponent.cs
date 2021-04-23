@@ -1,5 +1,4 @@
 using System.Collections;
-using Globals;
 using ObstacleModule.Behaviours;
 using ObstacleModule.Pool;
 using StateModule.Globals;
