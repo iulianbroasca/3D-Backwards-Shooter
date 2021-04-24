@@ -13,7 +13,11 @@
 1 day = 4 hours
 
 ![Diagram V2](https://user-images.githubusercontent.com/37576450/115917848-6c514780-a47f-11eb-84b7-f2dbe6d2566e.png)
-
+# Adjustments in Project settings:
+    Player -> Company name, Product name, Version
+    Physics -> Layer collision matrix
+    Script execution order
+    Tags and layers
 1 g. 
 # Instructions for Game Designer:
 
@@ -63,8 +67,8 @@ Obstacle configuration
 
     Obstacle component - Assign the prefab that contains the ObstacleComponent.
     Speed - The speed of the obstacle.
-    Obstacle life duration - The life of the bullet after it was instantiated.
-    Waiting time instantiating obstacle - The waiting time until the next obstacles will appear in scene.
+    Obstacle life duration - The life of the bullet after it was instantiated. (seconds)
+    Waiting time instantiating obstacle - The waiting time until the next obstacles will appear in scene. (seconds)
     Obstacle size - The size of the obstacle.
 
 
