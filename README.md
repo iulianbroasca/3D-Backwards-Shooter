@@ -71,6 +71,9 @@ Obstacle configuration
     Waiting time instantiating obstacle - The waiting time until the next obstacles will appear in scene. (seconds)
     Obstacle size - The size of the obstacle.
 
+# Asset store:
+    https://assetstore.unity.com/packages/3d/characters/humanoids/adventurer-blake-158728
+
 
 # Features based on short description and questions:
 
